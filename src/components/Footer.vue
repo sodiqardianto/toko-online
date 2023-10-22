@@ -1,3 +1,21 @@
+<script setup>
+import { onMounted } from "vue";
+
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faPinterest } from "@fortawesome/free-brands-svg-icons";
+
+onMounted(() => {
+  const year = new Date().getFullYear();
+  document.getElementById("year_now").innerHTML = year;
+});
+
+library.add(faFacebook, faInstagram, faTwitter, faPinterest);
+</script>
+
 <template>
   <!-- Footer Section Begin -->
   <footer class="footer-section">
@@ -52,8 +70,8 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="copyright-text">
-              Copyright &copy;
-                2023 - <span id="year_now"></span> All rights reserved | Shayna
+              Copyright &copy; 2023 - <span id="year_now"></span> All rights
+              reserved | Shayna
             </div>
           </div>
         </div>
@@ -62,30 +80,3 @@
   </footer>
   <!-- Footer Section End -->
 </template>
-
-<script>
-/* import the fontawesome core */
-import { library } from '@fortawesome/fontawesome-svg-core'
-
-/* import font awesome icon component */
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
-/* import specific icons */
-import { faFacebook } from '@fortawesome/free-brands-svg-icons'
-import { faInstagram } from '@fortawesome/free-brands-svg-icons'
-import { faTwitter } from '@fortawesome/free-brands-svg-icons'
-import { faPinterest } from '@fortawesome/free-brands-svg-icons'
-
-export default {
-    mounted() {
-        const year = new Date().getFullYear();
-        document.getElementById("year_now").innerHTML = year;
-    },
-  components: {
-    FontAwesomeIcon
-  },
-  setup() {
-    library.add(faFacebook, faInstagram, faTwitter, faPinterest)
-  }
-}
-</script>

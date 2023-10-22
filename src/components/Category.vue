@@ -1,3 +1,22 @@
+<script setup>
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper/modules";
+
+import { Swiper, SwiperSlide } from "swiper/vue";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+
+const modules = [Navigation, Pagination, Scrollbar, A11y, Autoplay];
+</script>
+
 <template>
   <swiper
     :modules="modules"
@@ -22,18 +41,20 @@
                 <img src="img/mickey1.jpg" alt="" />
                 <ul>
                   <li class="w-icon active">
-                    <a href="#"><i class="icon_bag_alt"></i></a>
+                    <router-link to="/product">
+                      <i class="icon_bag_alt"></i>
+                    </router-link>
                   </li>
                   <li class="quick-view">
-                    <a href="product.html">+ Quick View</a>
+                    <router-link to="/product"> + Quick View </router-link>
                   </li>
                 </ul>
               </div>
               <div class="pi-text">
                 <div class="catagory-name">Coat</div>
-                <a href="#">
+                <router-link to="/product">
                   <h5>Mickey Baggy</h5>
-                </a>
+                </router-link>
                 <div class="product-price">
                   $14.00
                   <span>$35.00</span>
@@ -127,36 +148,3 @@
     </swiper-slide>
   </swiper>
 </template>
-
-<script>
-// import Swiper core and required modules
-import {
-  Navigation,
-  Pagination,
-  Scrollbar,
-  A11y,
-  Autoplay,
-} from "swiper/modules";
-
-// Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from "swiper/vue";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-
-// Import Swiper styles
-export default {
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
-  setup() {
-    return {
-      modules: [Navigation, Pagination, Scrollbar, A11y, Autoplay],
-    };
-  },
-};
-</script>

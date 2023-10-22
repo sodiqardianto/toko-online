@@ -1,3 +1,23 @@
+<script setup>
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper/modules";
+
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from "swiper/vue";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+const modules = [Navigation, Pagination, Scrollbar, A11y, Autoplay];
+</script>
+
 <template>
   <div class="partner-logo">
     <swiper
@@ -60,35 +80,3 @@
     </swiper>
   </div>
 </template>
-
-<script>
-// import Swiper core and required modules
-import {
-  Navigation,
-  Pagination,
-  Scrollbar,
-  A11y,
-  Autoplay,
-} from "swiper/modules";
-
-// Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from "swiper/vue";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
-// Import Swiper styles
-export default {
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
-  setup() {
-    return {
-      modules: [Navigation, Pagination, Scrollbar, A11y, Autoplay],
-    };
-  },
-};
-</script>
